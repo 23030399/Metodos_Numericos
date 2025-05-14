@@ -7,7 +7,6 @@ public class ErrorAbsoluto {
         double valorReal = 5.678;
         double valorAproximado = 5.65;
         double errorAbsoluto = Math.abs(valorReal - valorAproximado);
-
         System.out.println("Error Absoluto: " + errorAbsoluto);
     }   
 }
