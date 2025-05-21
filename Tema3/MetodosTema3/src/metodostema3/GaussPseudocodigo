@@ -1,0 +1,32 @@
+ALGORITMO EliminacionGaussiana(A, b)
+    // Entrada: Matriz aumentada [A|b] de tamaño n x (n+1)
+    // Salida: Vector solución x
+
+    n ← número de filas de A
+    PARA k DESDE 0 HASTA n-1
+        // Verificar que el pivote no sea cero
+        SI A[k][k] = 0 ENTONCES
+            Imprimir "Pivote cero detectado, no se puede resolver"
+            Retornar
+        FIN SI
+        // Eliminación hacia adelante
+        PARA i DESDE k+1 HASTA n-1
+            factor ← A[i][k] / A[k][k]
+            PARA j DESDE k HASTA n
+                A[i][j] ← A[i][j] - factor * A[k][j]
+            FIN PARA
+        FIN PARA
+    FIN PARA
+
+    // Sustitución hacia atrás
+    x ← vector de tamaño n
+    PARA i DESDE n-1 HASTA 0
+        suma ← 0
+        PARA j DESDE i+1 HASTA n-1
+            suma ← suma + A[i][j] * x[j]
+        FIN PARA
+        x[i] ← (A[i][n] - suma) / A[i][i]
+    FIN PARA
+
+    Retornar x
+FIN ALGORITMO

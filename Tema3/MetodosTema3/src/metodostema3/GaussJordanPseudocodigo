@@ -1,0 +1,33 @@
+ALGORITMO GaussJordan(A, b)
+    // Entrada: Matriz aumentada [A|b] de tamaño n x (n+1)
+    // Salida: Vector solución x
+
+    n ← número de filas de A
+    PARA k DESDE 0 HASTA n-1
+        // Verificar que el pivote no sea cero
+        SI A[k][k] = 0 ENTONCES
+            Imprimir "Pivote cero detectado, no se puede resolver"
+            Retornar
+        FIN SI
+        // Hacer el pivote igual a 1
+        pivote ← A[k][k]
+        PARA j DESDE k HASTA n
+            A[k][j] ← A[k][j] / pivote
+        FIN PARA
+        // Eliminar elementos arriba y abajo del pivote
+        PARA i DESDE 0 HASTA n-1, i ≠ k
+            factor ← A[i][k]
+            PARA j DESDE k HASTA n
+                A[i][j] ← A[i][j] - factor * A[k][j]
+            FIN PARA
+        FIN PARA
+    FIN PARA
+
+    // Extraer solución
+    x ← vector de tamaño n
+    PARA i DESDE 0 HASTA n-1
+        x[i] ← A[i][n]
+    FIN PARA
+
+    Retornar x
+FIN ALGORITMO

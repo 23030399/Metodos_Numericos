@@ -1,0 +1,30 @@
+ALGORITMO Jacobi(A, b, x0, tol, maxIter)
+    // Entrada: Matriz A, vector b, aproximación inicial x0, tolerancia tol, máximo de iteraciones maxIter
+    // Salida: Vector solución x
+
+    n ← número de filas de A
+    x ← copia de x0
+    iter ← 0
+
+    MIENTRAS iter < maxIter
+        x_nuevo ← vector de tamaño n
+        PARA i DESDE 0 HASTA n-1
+            suma ← 0
+            PARA j DESDE 0 HASTA n-1, j ≠ i
+                suma ← suma + A[i][j] * x[j]
+            FIN PARA
+            x_nuevo[i] ← (b[i] - suma) / A[i][i]
+        FIN PARA
+        // Calcular error
+        error ← max(|x_nuevo[i] - x[i]| para todo i)
+        x ← copia de x_nuevo
+        iter ← iter + 1
+        SI error < tol ENTONCES
+            Imprimir "Raíz encontrada después de iter iteraciones"
+            Retornar x
+        FIN SI
+    FIN MIENTRAS
+
+    Imprimir "No convergió en maxIter iteraciones"
+    Retornar x
+FIN ALGORITMO
