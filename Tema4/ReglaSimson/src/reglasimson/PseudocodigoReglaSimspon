@@ -1,0 +1,22 @@
+ALGORITMO ReglaSimpson(f, a, b, n)
+    // Entrada: Función f(x), intervalo [a, b], número de subintervalos n (debe ser par)
+    // Salida: Aproximación de la integral de f(x) desde a hasta b
+
+    SI n % 2 ≠ 0 ENTONCES
+        Imprimir "El número de subintervalos debe ser par"
+        Retornar
+    FIN SI
+    h ← (b - a) / n
+    suma ← f(a) + f(b)
+    PARA i DESDE 1 HASTA n-1
+        x ← a + i * h
+        SI i % 2 = 0 ENTONCES
+            suma ← suma + 2 * f(x)
+        SINO
+            suma ← suma + 4 * f(x)
+        FIN SI
+    FIN PARA
+    integral ← (h / 3) * suma
+    Imprimir "Aproximación de la integral: ", integral
+    Retornar integral
+FIN ALGORITMO

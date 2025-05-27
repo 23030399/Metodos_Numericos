@@ -1,0 +1,20 @@
+ALGORITMO CuadraturaGaussiana(f, a, b, n)
+    // Entrada: Función f(x), intervalo [a, b], número de puntos n
+    // Salida: Aproximación de la integral de f(x) desde a hasta b
+
+    // Definir puntos y pesos de Gauss-Legendre (para n=3, ejemplo)
+    puntos ← [-0.7745966692414834, 0, 0.7745966692414834]
+    pesos ← [0.5555555555555556, 0.8888888888888888, 0.5555555555555556]
+
+    suma ← 0
+    // Transformar intervalo [a, b] a [-1, 1]
+    c1 ← (b - a) / 2
+    c2 ← (b + a) / 2
+    PARA i DESDE 0 HASTA n-1
+        x ← c1 * puntos[i] + c2  // Cambiar variable: x = (b-a)/2 * t + (b+a)/2
+        suma ← suma + pesos[i] * f(x)
+    FIN PARA
+    integral ← c1 * suma
+    Imprimir "Aproximación de la integral: ", integral
+    Retornar integral
+FIN ALGORITMO
