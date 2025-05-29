@@ -1,0 +1,20 @@
+Inicio
+
+    Definir arreglos x[] y y[] con n puntos conocidos
+    Leer xp  // valor de x a interpolar
+
+    yp ← 0
+
+    Para i desde 0 hasta n-1 hacer
+        p ← 1
+        Para j desde 0 hasta n-1 hacer
+            Si i ≠ j entonces
+                p ← p * (xp - x[j]) / (x[i] - x[j])
+            Fin Si
+        Fin Para
+        yp ← yp + p * y[i]
+    Fin Para
+
+    Mostrar "Interpolación polinómica: y(x) = ", yp
+
+Fin
