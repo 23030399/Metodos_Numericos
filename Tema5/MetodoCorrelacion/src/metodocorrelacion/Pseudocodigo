@@ -1,0 +1,22 @@
+Inicio
+
+    Definir arreglos x[] y y[] con n datos
+
+    sumX ← 0, sumY ← 0, sumXY ← 0, sumX2 ← 0, sumY2 ← 0
+
+    Para i desde 0 hasta n-1 hacer
+        sumX ← sumX + x[i]
+        sumY ← sumY + y[i]
+        sumXY ← sumXY + x[i] * y[i]
+        sumX2 ← sumX2 + x[i]^2
+        sumY2 ← sumY2 + y[i]^2
+    Fin Para
+
+    numerador ← n * sumXY - sumX * sumY
+    denominador ← raíz( (n * sumX2 - sumX^2) * (n * sumY2 - sumY^2) )
+
+    r ← numerador / denominador
+
+    Mostrar "Coeficiente de correlación: r = ", r
+
+Fin

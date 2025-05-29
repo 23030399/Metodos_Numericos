@@ -1,0 +1,10 @@
+Inicio
+
+    Definir x0, y0, x1, y1  // puntos conocidos
+    Definir x              // punto a interpolar
+
+    y ← y0 + (x - x0) * (y1 - y0) / (x1 - x0)
+
+    Mostrar "Interpolación lineal: y(x) = ", y
+
+Fin
