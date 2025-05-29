@@ -1,0 +1,17 @@
+Inicio
+
+    x ← 0
+    y ← 1
+    h ← 0.2
+    xf ← 0.4
+
+    Mientras x < xf hacer
+        f ← x + y
+        df ← 1 + x + y     // derivada de f respecto a x (aproximada)
+        y ← y + h * f + (h^2 / 2) * df
+        x ← x + h
+    Fin Mientras
+
+    Mostrar "y(xf) ≈", y
+
+Fin

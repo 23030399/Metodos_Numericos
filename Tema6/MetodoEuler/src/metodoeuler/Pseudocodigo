@@ -1,0 +1,16 @@
+Inicio
+
+    x ← 0
+    y ← 1
+    h ← 0.2
+    xf ← 0.4
+
+    Mientras x < xf hacer
+        f ← x + y
+        y ← y + h * f
+        x ← x + h
+    Fin Mientras
+
+    Mostrar "y(xf) ≈", y
+
+Fin

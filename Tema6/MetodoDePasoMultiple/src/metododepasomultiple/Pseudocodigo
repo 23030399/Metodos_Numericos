@@ -1,0 +1,17 @@
+Inicio
+
+    x[0] ← 0
+    x[1] ← 0.2
+    x[2] ← 0.4
+    y[0] ← 1
+    h ← 0.2
+
+    // Primer paso con Euler
+    y[1] ← y[0] + h * (x[0] + y[0])
+
+    // Segundo paso con Adams-Bashforth 2 pasos
+    y[2] ← y[1] + (h / 2) * [3 * f(x1, y1) - f(x0, y0)]
+
+    Mostrar "y(0.4) ≈", y[2]
+
+Fin
